@@ -12,7 +12,7 @@ What is WalletWatch?
 
 Why create WalletWatch?
 - Helpful to track finances
-- Solves real-world problems concerning budgetting
+- Solves real-world problems concerning budgeting
 
 What is it useful for?
 - Useful to manage finances more effectively
@@ -23,5 +23,5 @@ How will it be Used?
 - Log expenses
 
 Project Estimated Time Needed:
-10 hours a week
+10 hours a week, 
 4 weeks 
