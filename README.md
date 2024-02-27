@@ -1,7 +1,9 @@
 # WalletWatch
 
 Project Name: Wallet Watch
+
 Team Name: Vengeance 
+
 Team Members: Meron Matti and Jasmanpreet Singh
 
 Project Description: 
