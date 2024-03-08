@@ -27,3 +27,8 @@ How will it be Used?
 Project Estimated Time Needed:
 10 hours a week, 
 4 weeks 
+
+![image0](https://github.com/MeronM18/WalletWatch/assets/156122680/c0f2c529-c5ad-482f-ba75-15dca14fd272)
+
+
+
