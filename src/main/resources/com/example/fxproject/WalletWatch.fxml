@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="716.0" prefWidth="1084.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxproject.WalletWatchController">
+   <children>
+      <AnchorPane prefHeight="716.0" prefWidth="129.0" style="-fx-background-color: #E0E0E0;">
+         <children>
+            <Button fx:id="homeButton" layoutX="86.0" layoutY="259.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #E0E0E0;" text="Home">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButton" layoutX="82.0" layoutY="305.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" style="-fx-background-color: #E0E0E0;" text="Logout">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="32.0" fitWidth="26.0" layoutX="47.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-home-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="26.0" layoutX="47.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-logout-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/pfp.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="-1.0" layoutY="21.0" prefHeight="63.0" prefWidth="222.0" style="-fx-background-color: #E0E0E0;" text="Wallet Watch">
+               <font>
+                  <Font name="Bodoni MT Black Italic" size="24.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="63.0" fitWidth="82.0" layoutX="10.0" layoutY="639.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/WalletWatchLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="251.0" layoutY="-6.0" prefHeight="314.0" prefWidth="835.0">
+         <children>
+            <VBox layoutX="2.0" layoutY="1.0" prefHeight="179.0" prefWidth="798.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 30,0,30,0; -fx-border-radius: 30,0,30,0;" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="35.0">
+               <children>
+                  <HBox>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Dashboard">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Separator orientation="VERTICAL" style="-fx-background-color: #000000;">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Label text="Welcome Back, Meron" textFill="#24ac51">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="setDate" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" text="2/3/24" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="94.0" prefWidth="179.0" text="   Budget:" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="budgetValue" alignment="TOP_CENTER" prefHeight="139.0" prefWidth="296.0" text="600" textFill="#24ac51" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label layoutX="16.0" layoutY="195.0" text="Activity: ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Line endX="-38.60003662109375" endY="0.600006103515625" layoutX="116.0" layoutY="216.0" startX="-100.00003051757812" startY="0.600006103515625" />
+            <Button fx:id="exitButton" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="829.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="22.0" prefWidth="20.0" text="X" textFill="RED">
+               <opaqueInsets>
+                  <Insets right="5.0" />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </AnchorPane>
+      <PieChart fx:id="spendingChart" layoutX="739.0" layoutY="193.0" prefHeight="467.0" prefWidth="327.0" title="Spending">
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </PieChart>
+      <AnchorPane layoutX="268.0" layoutY="208.0" prefHeight="498.0" prefWidth="490.0">
+         <children>
+            <Label layoutX="5.0" layoutY="17.0" text="Income: " textFill="#006fff">
+               <font>
+                  <Font name="Bodoni MT Bold" size="23.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listIncome" layoutX="189.0" layoutY="46.0" prefHeight="159.0" prefWidth="241.0" />
+            <Label layoutX="30.0" layoutY="64.0" prefHeight="41.0" prefWidth="96.0" text="Log Income">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="incomeText" layoutX="9.0" layoutY="106.0" prefHeight="30.0" prefWidth="158.0" promptText="Enter Amount" />
+            <Button fx:id="removeIncome" layoutX="20.0" layoutY="144.0" mnemonicParsing="false" onAction="#removeIncomeOnAction" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #006fff; -fx-background-radius: 90;" text="Remove" textFill="WHITE" />
+            <Button fx:id="addIncome" layoutX="98.0" layoutY="145.0" mnemonicParsing="false" onAction="#addIncomeOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-background-color: #006fff; -fx-background-radius: 90;" text="Add" textFill="WHITE" />
+            <Label layoutX="6.0" layoutY="234.0" text="Spending:" textFill="#ff000f">
+               <font>
+                  <Font name="Bodoni MT Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="280.0" prefHeight="42.0" prefWidth="113.0" text="Log Spending">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="spendingText" layoutX="12.0" layoutY="328.0" prefHeight="30.0" prefWidth="158.0" promptText="Enter Amount" />
+            <Button fx:id="addSpending" layoutX="100.0" layoutY="437.0" mnemonicParsing="false" onAction="#addSpendingOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-background-color: #ff000f; -fx-background-radius: 90;" text="Add" textFill="WHITE" />
+            <Button fx:id="removeSpending" layoutX="19.0" layoutY="436.0" mnemonicParsing="false" onAction="#removeSpendingOnAction" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #ff000f; -fx-background-radius: 90;" text="Remove" textFill="WHITE" />
+            <ChoiceBox fx:id="spendingChoiceBox" layoutX="13.0" layoutY="386.0" prefWidth="150.0" />
+            <ListView fx:id="listSpending" layoutX="195.0" layoutY="286.0" prefHeight="159.0" prefWidth="241.0" />
+            <Label fx:id="choiceBoxText" layoutX="39.0" layoutY="368.0" text="Type of Spending" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
