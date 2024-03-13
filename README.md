@@ -10,7 +10,7 @@ Project Description:
 
 What is WalletWatch?
 - A budget planner program
-- Track expenses, set spending goals, input income sources
+- Log income, track spending, and know your budget 
 
 Why create WalletWatch?
 - Helpful to track finances
