@@ -16,7 +16,7 @@ import static javafx.stage.StageStyle.UNDECORATED;
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException { //creates stage for login page
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 816, 539);

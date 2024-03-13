@@ -40,6 +40,7 @@ public class WalletWatchController {
     private PieChart spendingChart;
     @FXML
     private Button removeIncome;
+    @FXML
     private Button addIncome;
     @FXML
     private ListView<Double> listIncome;
@@ -59,12 +60,12 @@ public class WalletWatchController {
     @FXML
     private Label choiceBoxText;
 
-    public void exitButtonOnAction(ActionEvent e) {
+    public void exitButtonOnAction(ActionEvent e) { //closes the window when the exit button is clicked
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
     }
     public void homeButtonOnAction(ActionEvent e) { //home button action
-
+        //no action because the page is already on home
     }
 
     public void logoutButtonOnAction(ActionEvent e) { //logout button action
@@ -88,15 +89,15 @@ public class WalletWatchController {
 
     private double budget = 0.0; // Initialize budget to 0
 
-    public void addIncomeOnAction(ActionEvent e) {
-        String incomeAmountText = incomeText.getText();
+    public void addIncomeOnAction(ActionEvent e) { //add income method
+        String incomeAmountText = incomeText.getText(); //gets input from income text box
         if (!incomeAmountText.isEmpty()) {
             // Remove the dollar sign if it exists
             if (incomeAmountText.startsWith("$")) {
                 incomeAmountText = incomeAmountText.substring(1);
             }
 
-            double incomeAmount = Double.parseDouble(incomeAmountText);
+            double incomeAmount = Double.parseDouble(incomeAmountText); //ensures that the value is double
 
             // Add the income amount to the ListView and incomes list
             listIncome.getItems().add(incomeAmount);
@@ -108,42 +109,42 @@ public class WalletWatchController {
         }
     }
 
-    public void removeIncomeOnAction(ActionEvent e) {
-        int selectedIndex = listIncome.getSelectionModel().getSelectedIndex();
+    public void removeIncomeOnAction(ActionEvent e) { //remove income method
+        int selectedIndex = listIncome.getSelectionModel().getSelectedIndex(); //sets the index selected to a integer
         if (selectedIndex != -1) {
             double removedIncome = listIncome.getItems().remove(selectedIndex);
             incomes.remove(removedIncome); // Remove the income from the incomes list
             // Update the budget
             budget -= removedIncome;
-            updateBudgetValue();
+            updateBudgetValue(); //calls method
         }
     }
-    private void updatePieChart() {
+    private void updatePieChart() { //pie chart method
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         ObservableMap<String, Double> spendingMap = FXCollections.observableHashMap();
 
-        for (String item : listSpending.getItems()) {
-            String[] parts = item.split(" - ");
-            String type = parts[1];
-            double amount = Double.parseDouble(parts[0]);
+        for (String item : listSpending.getItems()) { //loops through the string of choicebox options
+            String[] parts = item.split(" - "); //splits the spending into two parts
+            String type = parts[1]; //first part is the type of spending
+            double amount = Double.parseDouble(parts[0]); //second part is the amount of spending
 
-            if (spendingMap.containsKey(type)) {
-                spendingMap.put(type, spendingMap.get(type) + amount);
+            if (spendingMap.containsKey(type)) { //checks if the type of spending is already listed
+                spendingMap.put(type, spendingMap.get(type) + amount); //if so it will update the already existing sector on the chart
             } else {
-                spendingMap.put(type, amount);
+                spendingMap.put(type, amount); //if not found, create a new sector on pie chart
             }
         }
 
         for (String type : spendingMap.keySet()) {
-            pieChartData.add(new PieChart.Data(type, spendingMap.get(type)));
+            pieChartData.add(new PieChart.Data(type, spendingMap.get(type))); //creates a new piechart data object
         }
 
-        spendingChart.setData(pieChartData);
+        spendingChart.setData(pieChartData); //sets the data of pie chart on scenebuilder
     }
 
-    public void addSpendingOnAction(ActionEvent e) {
-        String spendingAmountText = spendingText.getText();
-        String spendingType = spendingChoiceBox.getValue();
+    public void addSpendingOnAction(ActionEvent e) { //add spending method
+        String spendingAmountText = spendingText.getText(); //gets amount
+        String spendingType = spendingChoiceBox.getValue(); //gets type
 
         if (!spendingAmountText.isEmpty() && spendingType != null) {
             // Remove the dollar sign if it exists
@@ -151,7 +152,7 @@ public class WalletWatchController {
                 spendingAmountText = spendingAmountText.substring(1);
             }
 
-            double spendingAmount = Double.parseDouble(spendingAmountText);
+            double spendingAmount = Double.parseDouble(spendingAmountText); //spending amount converts to double
 
             // Add the spending amount and type to the ListView and spendings list
             listSpending.getItems().add(spendingAmount + " - " + spendingType);
@@ -166,14 +167,14 @@ public class WalletWatchController {
         }
     }
 
-    public void removeSpendingOnAction(ActionEvent e) {
-        int selectedIndex = listSpending.getSelectionModel().getSelectedIndex();
+    public void removeSpendingOnAction(ActionEvent e) { //remove spending method
+        int selectedIndex = listSpending.getSelectionModel().getSelectedIndex(); //index selected is matched with an integer
         if (selectedIndex != -1) {
-            String selectedSpending = listSpending.getItems().get(selectedIndex);
-            String[] parts = selectedSpending.split(" - ");
-            double removedSpending = Double.parseDouble(parts[0]);
+            String selectedSpending = listSpending.getItems().get(selectedIndex); //gets item from that index
+            String[] parts = selectedSpending.split(" - "); //splits into two parts
+            double removedSpending = Double.parseDouble(parts[0]); //removes amount
             listSpending.getItems().remove(selectedIndex);
-            spendings.remove(removedSpending);
+            spendings.remove(removedSpending); //removes type of spending
             budget += removedSpending; // Adding back the removed spending to update the budget
             updateBudgetValue();
             updatePieChart(); // Update the pie chart
@@ -184,14 +185,14 @@ public class WalletWatchController {
     private ObservableList<Double> spendings = FXCollections.observableArrayList();
 
     private void updateBudgetValue() {
-        double totalIncome = incomes.stream().mapToDouble(Double::doubleValue).sum();
-        double totalSpending = spendings.stream().mapToDouble(Double::doubleValue).sum();
-        budget = totalIncome - totalSpending;
+        double totalIncome = incomes.stream().mapToDouble(Double::doubleValue).sum(); //gets all income values
+        double totalSpending = spendings.stream().mapToDouble(Double::doubleValue).sum(); //gets all spending values
+        budget = totalIncome - totalSpending; //calculate budget
 
-        String budgetText = "$" + String.valueOf(budget);
-        budgetValue.setText(budgetText);
+        String budgetText = "$" + String.valueOf(budget); //adds dollar sign before budget
+        budgetValue.setText(budgetText); //sets the budget text to calculated budget value
         if (budget < 0.0) {
-            budgetValue.setStyle("-fx-text-fill: red;");
+            budgetValue.setStyle("-fx-text-fill: red;"); //if budget is negative, font color will be red
         } else {
             budgetValue.setStyle(""); // Reset the style
         }
@@ -200,9 +201,9 @@ public class WalletWatchController {
     public void initialize() {
         // Set the date label to the current date
         LocalDate currentDate = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //portray the date
         String formattedDate = currentDate.format(formatter);
-        setDate.setText(formattedDate);
+        setDate.setText(formattedDate); //sets the date label to current date
 
         String budgetText = "$" + String.valueOf(budget);
         budgetValue.setText(budgetText);
@@ -212,7 +213,7 @@ public class WalletWatchController {
 
         spendingChoiceBox.getItems().addAll(spending);
 
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList( //pie chart logic
                 new PieChart.Data("Food", Math.random() * 1000),
                 new PieChart.Data("Transportation", Math.random() * 1000),
                 new PieChart.Data("Shopping", Math.random() * 1000),
@@ -221,7 +222,5 @@ public class WalletWatchController {
         );
         spendingChart.setData(pieChartData);
     }
-
-
 
 }
