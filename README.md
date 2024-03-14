@@ -28,7 +28,9 @@ Project Estimated Time Needed:
 10 hours a week, 
 4 weeks 
 
-![image0](https://github.com/MeronM18/WalletWatch/assets/156122680/c0f2c529-c5ad-482f-ba75-15dca14fd272)
+![UML](https://github.com/MeronM18/WalletWatch/assets/156122680/656840b2-16fe-4809-9cd8-fc71d77d8e9b)
+
+
 
 
 
