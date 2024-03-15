@@ -25,7 +25,7 @@ How will it be Used?
 - Log expenses
 
 Project Estimated Time Needed:
-10 hours a week, 
+5 hours a week, 
 4 weeks 
 
 ![UML](https://github.com/MeronM18/WalletWatch/assets/156122680/656840b2-16fe-4809-9cd8-fc71d77d8e9b)
