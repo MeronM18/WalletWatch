@@ -31,6 +31,8 @@ Project Estimated Time Needed:
 ![UML](https://github.com/MeronM18/WalletWatch/assets/156122680/656840b2-16fe-4809-9cd8-fc71d77d8e9b)
 
 
-#Implementation Manual
+**Implementation Manual**
+
+[WalletWatchUserManual.docx](https://github.com/MeronM18/WalletWatch/files/14761851/WalletWatchUserManual.docx)
 
 
