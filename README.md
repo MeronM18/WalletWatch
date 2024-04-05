@@ -36,4 +36,9 @@ Below is an attached file that explains how to use the application!
 
 [WalletWatchUserManual.docx](https://github.com/MeronM18/WalletWatch/files/14761851/WalletWatchUserManual.docx)
 
+# **Demo Video**
+
+https://github.com/MeronM18/WalletWatch/assets/156122680/12f31104-dffd-4eb5-90e5-b644c60d8938
+
+
 
