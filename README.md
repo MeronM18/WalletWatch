@@ -19,11 +19,6 @@ Why create WalletWatch?
 What is it useful for?
 - Useful to manage finances more effectively
 
-How will it be Used?
-- Set up financial goals
-- Create a budget
-- Log expenses
-
 Project Estimated Time Needed:
 5 hours a week, 
 4 weeks 
